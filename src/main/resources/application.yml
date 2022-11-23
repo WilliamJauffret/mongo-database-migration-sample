@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: database-migration-sample
+  data:
+    mongodb:
+      #Timeout in milisecond, ap
+      connection-timeout: 500
+      read-timeout: 500
+      primary:
+        database: cart
+        uri: mongodb://localhost:27017/cart
+      deprecated:
+        database: cart
+        uri: mongodb://localhost:27018/cart
+      maintain-deprecated-updated: true
+      disable-deprecated-database: false
+      #CAREFULL :
+      #Never set this property to true and then false and then true without droping the newest databse (primary) before.
+      mongo-double-database-migration-on: false
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.mongo.MongoReactiveAutoConfiguration,org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration
+
