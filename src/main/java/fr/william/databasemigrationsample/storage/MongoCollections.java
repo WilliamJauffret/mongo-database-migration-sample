@@ -1,8 +1,7 @@
 package fr.william.databasemigrationsample.storage;
 
 public enum MongoCollections {
-    CARTS("carts"),
-    CUSTOMERS("customers");
+    CARTS("carts");
 
     private final String name;
 

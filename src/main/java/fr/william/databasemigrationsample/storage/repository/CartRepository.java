@@ -8,11 +8,11 @@ import java.util.UUID;
 
 public interface CartRepository {
 
-    public Mono<CartStorageModel> findById(UUID cartId);
-    public Mono<CartStorageModel> save(CartStorageModel cart);
-    public Mono<Boolean> deleteCart(UUID cartId);
-    public Mono<Void> updateCartCustomer(UUID cartId, String customerId);
-    public Mono<UpdateResult> updateCartCustomerAndReturnUpdateResult(UUID cartId, String customerId);
+    Mono<CartStorageModel> findById(UUID cartId);
+    Mono<CartStorageModel> save(CartStorageModel cart);
+    Mono<Boolean> deleteCart(UUID cartId);
+    Mono<Void> updateCartCustomer(UUID cartId, String customerId);
+    Mono<UpdateResult> updateCartCustomerAndReturnUpdateResult(UUID cartId, String customerId);
 
 
 

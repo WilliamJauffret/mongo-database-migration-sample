@@ -16,7 +16,10 @@ spring:
       disable-deprecated-database: false
       #CAREFULL :
       #Never set this property to true and then false and then true without droping the newest databse (primary) before.
-      mongo-double-database-migration-on: false
+      mongo-double-database-migration-on: true
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.mongo.MongoReactiveAutoConfiguration,org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration
+logging:
+  level:
+    root: debug
 

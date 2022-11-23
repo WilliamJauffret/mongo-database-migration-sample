@@ -20,10 +20,6 @@ public class CartStorageModel {
     private String customerId;
     private boolean discountFailsoftMode = false;
 
-    public boolean belongsToACustomer() {
-        return customerId != null;
-    }
-
     public void initialize() {
         this.setId(UUID.randomUUID());
         this.setCreatedAt(new Date());

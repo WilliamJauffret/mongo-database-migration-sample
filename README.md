@@ -45,4 +45,8 @@ But we also need some logic to do the necessary switch between the old and the n
 
 As you can see, In order to centralise the read of `mongoDoubleDatabaseMigrationOn` and the logic to apply the new function or de deprecated one, i created the `SmartFunctionExecutor` class. 
 
+You API is now ready to work with two database and smoothly transfer all usage to the new one. All the customers will smoothly have their cart transferred into the new database without any interruptions. 
+
+You now just have to run two mongo database and test it :  `docker run --name mongo_deprecated -d -p 27018:27017 mongo` and `docker run --name mongo_new -d -p 27017:27017 mongo`
+
 
