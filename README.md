@@ -49,4 +49,12 @@ You API is now ready to work with two database and smoothly transfer all usage t
 
 You now just have to run two mongo database and test it :  `docker run --name mongo_deprecated -d -p 27018:27017 mongo` and `docker run --name mongo_new -d -p 27017:27017 mongo`
 
+You can now try, when the `mongo-double-database-migration-on` is set to false, no operations reach the new database/ When you then set `mongo-double-database-migration-on` to true, 
+all write operations ( Read and Write ) happen to the new database. You can also choose to maintain the old one updated, then all write will also happen to the deprecated one. 
+
+When you judge that enough cart has benn migrate to the new mongo, you just have to set  `disable-deprecated-database` to true and no connections to the deprecated database will happen again. 
+All the traffic will flow to the new mongo uniquely. 
+
+That's all. You have smoothly migrate from one deprecated mongo database to a new one in a 99.999% availability and critical for business service. 
+
 
